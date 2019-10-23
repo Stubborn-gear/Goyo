@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <color name="graye">#e8e8e8</color>
+    <color name="blue_bg">#4ba9e8</color>
+    <color name="blue_bg2">#FF4787F7</color>
+    <color name="blue_bg3">#4787f7</color>
+    <color name="blue_down">#417FD8</color>
+    <color name="blue2">#1A8AFA</color>
+    <color name="blue3">#60A2F8</color>
+    <color name="blue4">#abd4fb</color>
+    <color name="black">#333333</color>
+    <color name="black5">#000000</color>
+    <color name="black_2">#00000000</color>
+    <color name="trans">#00000000</color>
+    <color name="black3">#FF979797</color>
+    <color name="black4">#B3000000</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#a3a3af</color>
+    <color name="gray2">#f8f8f8</color>
+    <color name="gray3">#888888</color>
+    <color name="line">#DDDDDD</color>
+    <color name="line_vertical">#dddddd</color>
+    <color name="line_horizontal">#f8f8f8</color>
+    <color name="gray5">#3A3C42</color>
+    <color name="gray6">#A3A3AF</color>
+    <color name="gray7">#f5f5f5</color>
+    <color name="gray8">#E7E7E7</color>
+    <color name="gray9">#454451</color>
+    <color name="gray10">#666666</color>
+    <color name="gray11">#999999</color>
+    <color name="gray12">#979797</color>
+    <color name="gray13">#F4F4F4</color>
+    <color name="gray14">#85878E</color>
+    <color name="F0F0F2">#F0F0F2</color>
+    <color name="D2D5DC">#D2D5DC</color>
+    <color name="dialog_bg">#454545</color>
+    <color name="auditing_in">#74CC5A</color>
+    <color name="gray15">#4E4E4E</color>
+    <color name="login_line">#CCCCCC</color>
+
+
+    <color name="grayEeeeee">#eeeeee</color>
+    <color name="red">#FF0000</color>
+    <color name="red2">#F63D31</color>
+    <color name="yellow">#ffb400</color>
+    <!-- 扫描 -->
+    <color name="biankuangColor">#F2F2F2</color>
+    <color name="viewfinder_mask">#c0000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="main_color_text">#666666</color>
+    <color name="title_color_normal">#f8941f</color>
+    <color name="title_color_click">#f15a25</color>
+    <color name="gray_color">#B2B2B2</color>
+    <color name="login_line_color">#e0e0e0</color>
+    <color name="hint_login_color">#b3b3b3</color>
+    <color name="bg_login">#f0f0f0</color>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

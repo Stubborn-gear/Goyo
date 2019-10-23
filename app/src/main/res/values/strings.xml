@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Goio</string>
+
+
+    <!--main-->
+    <string name="main_tab1">首页</string>
+    <string name="main_tab2">设备</string>
+    <string name="main_tab3">备品</string>
+    <string name="main_tab4">维保</string>
+    <string name="yun_ying_yong">云应用</string>
+    <string name="industry_didi">工业滴滴</string>
+    <string name="yun_duan_app">云端应用</string>
+    <string name="industry_doctor">工业好大夫</string>
+    <string name="my_user">我的</string>
+
+    <!--title-->
+    <string name="back">返回</string>
+<!--    <string name="main_tab2">设备</string>
+    <string name="main_tab3">备品</string>
+    <string name="main_tab4">维保</string>
+    <string name="yun_ying_yong">云应用</string>
+    <string name="industry_didi">工业滴滴</string>
+    <string name="yun_duan_app">云端应用</string>
+    <string name="industry_doctor">工业好大夫</string>
+    <string name="my_user">我的</string>-->
+
+
+
+
+
+
+</resources>
