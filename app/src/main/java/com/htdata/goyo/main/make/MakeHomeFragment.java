@@ -15,6 +15,7 @@ import com.htdata.goyo.network.manage.NetworkManage;
 import com.htdata.goyo.network.manage.OnResponseResult;
 import com.htdata.goyo.network.manage.ReqUrl;
 import com.htdata.goyo.network.utils.NetUtil;
+import com.htdata.goyo.util.statusbar.ImmersionBar;
 
 import androidx.annotation.Nullable;
 import butterknife.BindView;
@@ -37,8 +38,8 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class MakeHomeFragment extends BaseFragment {
 
-    @BindView(R.id.home_text1)
-    TextView homeText1;
+
+
     Unbinder unbinder ;
 
     @Override
@@ -50,26 +51,16 @@ public class MakeHomeFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = getInflater(getContext(), R.layout.main_make_home_fragment, container, false);
+        ImmersionBar.with(getActivity(), this).statusBarDarkFont(false).init();
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
-    @OnClick({R.id.home_btn1, R.id.home_btn2})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.home_btn1:
-                reqGet1();
-                break;
-            case R.id.home_btn2:
-                break;
-        }
-    }
+
 
 
     //Get请求 无参的
     private void reqGet1() {
-
-
         NetworkManage.getInstance().reqGetAsync(new OnResponseResult() {
             @Override
             public void onResponseSuccess(String result, int tag) {

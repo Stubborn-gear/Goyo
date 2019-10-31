@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Goio</string>
+    <string name="app_name">Goyo</string>
 
 
     <!--main-->
@@ -25,6 +25,38 @@
     <string name="my_user">我的</string>-->
 
 
+    <!-- 登录注册 -->
+    <string name="qy_login">企业登陆</string>
+    <string name="personal_login">个人登陆</string>
+    <string name="login">登陆</string>
+    <string name="account">请输入企业账号</string>
+    <string name="password">请输入账号密码</string>
+    <string name="input_phone">请输入手机号</string>
+    <string name="input_code">请输入验证码</string>
+    <string name="user_register">用户注册</string>
+    <string name="logo">长材业远智能运维平台</string>
+    <string name="get_code">获取验证码</string>
+    <string name="forget_pwd">忘记密码</string>
+
+
+    <!-- 制造商主页 -->
+    <string name="type_ratio_ranking">类型/占比排名</string>
+    <string name="device_ranking">设备排名</string>
+    <string name="buy_qy_count">购买企业数</string>
+    <string name="sell_device_count">售出设备数</string>
+    <string name="operate_data">经营数据</string>
+    <string name="operate_census">售出设备月度概况统计</string>
+    <string name="abnormal_rate">异常率</string>
+    <string name="run_rate">运行率</string>
+    <string name="run_number">运行台数</string>
+    <string name="standby_number">待机台数</string>
+    <string name="fault_number">故障台数</string>
+
+
+
+
+
+    <string name="no_data">暂无数据</string>
 
 
 

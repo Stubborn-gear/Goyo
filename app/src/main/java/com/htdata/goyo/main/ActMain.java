@@ -15,6 +15,7 @@ import com.htdata.goyo.main.use.UseHomeFragment;
 import com.htdata.goyo.main.use.UseMaintenanceFragment;
 import com.htdata.goyo.main.use.UseSparesFragment;
 import com.htdata.goyo.util.UserUtil;
+import com.htdata.goyo.util.statusbar.ImmersionBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -60,6 +61,7 @@ public class ActMain extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initFragment();
+        ImmersionBar.with(this).init();
     }
 
 

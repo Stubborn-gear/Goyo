@@ -23,8 +23,16 @@
     </style>
 
 
+    <!-- 沉浸式 白色 -->
+    <style name="immersion_bar">
+        <item name="android:background">@color/white</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
 
-
+    <!-- edittext 光标颜色-->
+    <style name="Edit_Cursor_Color">
+        <item name="android:textCursorDrawable">@drawable/edit_cursor_color</item>
+    </style>
 
 
 

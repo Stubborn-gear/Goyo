@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/qb_px_44"
-    android:background="@color/white"
-    app:layout_scrollFlags="scroll|enterAlways|snap">
+    android:layout_height="67dp"
+    style="@style/immersion_bar">
 
     <LinearLayout
         android:id="@+id/title_right"
@@ -30,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textColor="#4787F7"
+            android:textColor="@color/title_back_text"
             android:textSize="16sp"
             android:visibility="gone" />
 
@@ -57,7 +55,7 @@
         android:maxLines="1"
         android:text=""
         android:textColor="#3A3C42"
-        android:textSize="17sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/title_left"
@@ -69,7 +67,7 @@
         android:paddingLeft="@dimen/qb_px_15"
         android:paddingRight="@dimen/qb_px_15"
         android:text="@string/back"
-        android:textColor="@color/black"
-        android:textSize="17sp" />
+        android:textColor="@color/title_back_text"
+        android:textSize="16sp" />
 
 </RelativeLayout>

@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
 
 
+    <color name="blue1">#789FF4</color>
     <color name="graye">#e8e8e8</color>
     <color name="blue_bg">#4ba9e8</color>
     <color name="blue_bg2">#FF4787F7</color>
@@ -12,6 +13,7 @@
     <color name="blue_down">#417FD8</color>
     <color name="blue2">#1A8AFA</color>
     <color name="blue3">#60A2F8</color>
+    <color name="title_back_text">#108EE9</color>
     <color name="blue4">#abd4fb</color>
     <color name="black">#333333</color>
     <color name="black5">#000000</color>
@@ -23,6 +25,7 @@
     <color name="gray">#a3a3af</color>
     <color name="gray2">#f8f8f8</color>
     <color name="gray3">#888888</color>
+    <color name="gray4">#FFECECEC</color>
     <color name="line">#DDDDDD</color>
     <color name="line_vertical">#dddddd</color>
     <color name="line_horizontal">#f8f8f8</color>
@@ -31,7 +34,7 @@
     <color name="gray7">#f5f5f5</color>
     <color name="gray8">#E7E7E7</color>
     <color name="gray9">#454451</color>
-    <color name="gray10">#666666</color>
+    <color name="gray10">#FF666666</color>
     <color name="gray11">#999999</color>
     <color name="gray12">#979797</color>
     <color name="gray13">#F4F4F4</color>
