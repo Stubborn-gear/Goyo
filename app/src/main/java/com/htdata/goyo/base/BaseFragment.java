@@ -20,9 +20,6 @@ import androidx.fragment.app.Fragment;
  */
 public class BaseFragment extends Fragment {
 
-    public ImageButton tLeftBtn , tRightBtn ;
-    public TextView tRightText,tCenterTitle ;
-//    public OkHttpManager okManager;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,17 +30,11 @@ public class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        okManager = OkHttpManager.getInstance();
 //        initRegisterEventBus();
         return  super.onCreateView(inflater,container,savedInstanceState);
     }
 
-    public void initTitleBar(View view){
-//        tLeftBtn = (ImageButton) view.findViewById(R.id.title_left_btn);
-//        tCenterTitle = (TextView) view.findViewById(R.id.title_center_text);
-//        tRightBtn = (ImageButton) view.findViewById(R.id.title_right_image);
-//        tRightText = (TextView) view.findViewById(R.id.title_right_text);
-    }
+
 
     /** 获取 LayoutInflater */
     public View getInflater(Context context,int layoutView,ViewGroup container,boolean attachToRoot){

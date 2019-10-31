@@ -1,32 +1,392 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/blue_shape"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/home_btn1"
-        android:layout_marginTop="200dp"
+    <!-- Title -->
+    <RelativeLayout
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="请求"
-        />
-    <Button
-        android:id="@+id/home_btn2"
+        android:layout_height="@dimen/qb_px_44">
+
+        <ImageView
+            android:id="@+id/home_my_user"
+            android:layout_alignParentLeft="true"
+            android:paddingRight="@dimen/qb_px_15"
+            android:paddingLeft="@dimen/qb_px_15"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_my_user"/>
+
+        <TextView
+            android:layout_toLeftOf="@+id/home_data_check"
+            android:layout_toRightOf="@+id/home_my_user"
+            android:gravity="center_horizontal|center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/logo"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/home_data_check"
+            android:layout_alignParentRight="true"
+            android:paddingRight="@dimen/qb_px_15"
+            android:paddingLeft="@dimen/qb_px_15"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_data_check"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:scrollbars="none"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="取消"
-        />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/home_text1"
-        android:gravity="center"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="制造方 主页"
-        android:textColor="@color/blue_down"
-        android:textSize="@dimen/sp_30"/>
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_22"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_20">
 
 
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type_ratio_ranking"
+            android:textSize="14sp"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_marginRight="@dimen/qb_px_4"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/home_device_ranking"
+            android:layout_width="@dimen/qb_px_13"
+            android:layout_height="@dimen/qb_px_6"
+            android:background="@color/blue4"/>
+
+        <TextView
+            android:id="@+id/home_device_ranking"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_ranking"
+            android:textSize="10sp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:background="@color/white"
+        android:id="@+id/home_bar_chart"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_270"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:background="@drawable/white_filleted_corner"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_80">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_80">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="70"
+                android:textSize="24sp"
+                android:textColor="@color/blue_bg2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/buy_qy_count"
+                android:textSize="10sp"
+                android:textColor="@color/blue_bg2"/>
+        </LinearLayout>
+
+        <View
+            android:layout_gravity="center"
+            android:layout_width="@dimen/qb_px_1"
+            android:layout_height="@dimen/qb_px_20"
+            android:background="@color/blue_bg2"/>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_80">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="70"
+                android:textSize="24sp"
+                android:textColor="@color/blue_bg2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sell_device_count"
+                android:textSize="10sp"
+                android:textColor="@color/blue_bg2"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="@dimen/qb_px_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/operate_data"
+            android:textSize="14sp"
+            android:textColor="@color/blue_bg2"/>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"/>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_42">
+
+            <View
+                android:id="@+id/home_view"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/qb_px_3"
+                android:layout_height="@dimen/qb_px_14"
+                android:background="@color/blue_bg2"/>
+
+            <TextView
+                android:layout_toRightOf="@+id/home_view"
+                android:layout_marginLeft="@dimen/qb_px_6"
+                android:layout_marginTop="@dimen/qb_px_12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/operate_census"
+                android:textSize="14sp"
+                android:textColor="@color/blue_bg2"/>
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_refresh"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_1"
+            android:background="@color/gray4"/>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:orientation="vertical"
+                android:layout_width="@dimen/qb_px_40"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="70%"
+                    android:textSize="14sp"
+                    android:textColor="@color/blue_bg2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/abnormal_rate"
+                    android:textSize="12sp"
+                    android:textColor="@color/blue_bg2"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:orientation="vertical"
+                android:layout_width="@dimen/qb_px_40"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="70%"
+                    android:textSize="14sp"
+                    android:textColor="@color/blue_bg2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/run_rate"
+                    android:textSize="12sp"
+                    android:textColor="@color/blue_bg2"/>
+            </LinearLayout>
+
+            <View
+                android:layout_gravity="center"
+                android:layout_width="@dimen/qb_px_1"
+                android:layout_height="@dimen/qb_px_32"
+                android:background="@color/gray4"/>
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/home_run_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99,1111"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray10"/>
+                <LinearLayout
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_marginTop="@dimen/qb_px_5"
+                        android:layout_marginRight="@dimen/qb_px_4"
+                        android:layout_width="@dimen/qb_px_13"
+                        android:layout_height="@dimen/qb_px_6"
+                        android:background="@color/blue_bg2"/>
+                    <TextView
+                        android:layout_marginTop="@dimen/qb_px_5"
+                        android:id="@+id/home_tv_run_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/run_number"
+                        android:textSize="10sp"
+                        android:textColor="@color/gray"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/home_standby_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99,1111"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray10"/>
+                <LinearLayout
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_marginTop="@dimen/qb_px_5"
+                        android:layout_marginRight="@dimen/qb_px_4"
+                        android:layout_width="@dimen/qb_px_13"
+                        android:layout_height="@dimen/qb_px_6"
+                        android:background="@color/blue_bg2"/>
+                    <TextView
+                        android:layout_marginTop="@dimen/qb_px_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/standby_number"
+                        android:textSize="10sp"
+                        android:textColor="@color/gray"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/home_fault_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99,1111"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray10"/>
+                <LinearLayout
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_marginTop="@dimen/qb_px_5"
+                        android:layout_marginRight="@dimen/qb_px_4"
+                        android:layout_width="@dimen/qb_px_13"
+                        android:layout_height="@dimen/qb_px_6"
+                        android:background="@color/blue_bg2"/>
+                    <TextView
+                        android:layout_marginTop="@dimen/qb_px_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/standby_number"
+                        android:textSize="10sp"
+                        android:textColor="@color/gray"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/df1_line_chart1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_200" />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

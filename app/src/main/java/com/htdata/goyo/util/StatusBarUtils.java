@@ -586,7 +586,7 @@ public class StatusBarUtils {
         }
     }
 
-    public static void destroyImmersionBar(Activity mActivity) {
+    public static void unImmersionBar(Activity mActivity) {
         ImmersionBar.with(mActivity).destroy();
     }
 

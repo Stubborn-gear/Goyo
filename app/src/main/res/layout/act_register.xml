@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/reg_title_bar"
+        layout="@layout/act_title_bar" />
+
+    <EditText
+        android:id="@+id/login_account"
+        style="@style/Edit_Cursor_Color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/qb_px_16"
+        android:layout_toLeftOf="@+id/login_code"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="@string/account"
+        android:inputType="text"
+        android:lines="1"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:textColor="@color/gray5"
+        android:textColorHint="@color/login_line"
+        android:textSize="17sp" />
+
+
+
+
+</LinearLayout>

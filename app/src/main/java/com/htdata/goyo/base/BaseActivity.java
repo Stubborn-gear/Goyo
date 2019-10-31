@@ -14,8 +14,10 @@ import com.htdata.goyo.R;
 import com.htdata.goyo.application.GoyoApplication;
 import com.htdata.goyo.network.manage.NetworkManage;
 import com.htdata.goyo.network.manage.OnResponseResult;
+import com.htdata.goyo.util.StatusBarUtils;
 import com.htdata.goyo.util.eventbus.BindEventBus;
 import com.htdata.goyo.util.eventbus.EventBusUtils;
+import com.htdata.goyo.util.statusbar.ImmersionBar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,10 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnRespon
     protected ImageView tRightLeftImage ,tRightRightImage;
     protected Context mContext;
     protected NetworkManage netClient;
-
-
-
-//    protected ImmersionBar mImmersionBar;// 沉浸式状态栏  操作类
+    protected ImmersionBar mImmersionBar;// 沉浸式状态栏  操作类
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,12 +44,11 @@ public abstract class BaseActivity extends AppCompatActivity implements OnRespon
         GoyoApplication.addAct(this);
         mContext = GoyoApplication.getContext();
         netClient = NetworkManage.getInstance();
+        initImmersionBar();
     }
 
     protected void initImmersionBar() {
-        //在BaseActivity里初始化
-//        mImmersionBar = ImmersionBar.with(this);
-//        mImmersionBar.init();
+        StatusBarUtils.initImmersionBar(this, true);
     }
 
     /**
@@ -183,6 +181,17 @@ public abstract class BaseActivity extends AppCompatActivity implements OnRespon
         return getResources();
     }
 
+    protected String setString(int id){
+        return getString(id);
+    }
+
+    protected void setHidden(View view,boolean isHidden){
+        if (isHidden) {
+            view.setVisibility(View.GONE);
+        }else {
+            view.setVisibility(View.VISIBLE);
+        }
+    }
     /**
      * EventBus 注册
      */
@@ -195,7 +204,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnRespon
     /**
      * EventBus 取消注册
      */
-    private void initUnregisterEventBus() {
+    private void unregisterEventBus() {
         if (this.getClass().isAnnotationPresent(BindEventBus.class)) {
             EventBusUtils.unregister(this);
         }
@@ -214,7 +223,8 @@ public abstract class BaseActivity extends AppCompatActivity implements OnRespon
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        initUnregisterEventBus();
+        unregisterEventBus();
+        StatusBarUtils.unImmersionBar(this);
 //        if (mImmersionBar != null){
 //            mImmersionBar.destroy();  //在BaseActivity里销毁
 //        }
