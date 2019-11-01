@@ -39,17 +39,21 @@
     <color name="gray12">#979797</color>
     <color name="gray13">#F4F4F4</color>
     <color name="gray14">#85878E</color>
+    <color name="gray15">#4E4E4E</color>
+    <color name="gray16">#ECECEC</color>
     <color name="F0F0F2">#F0F0F2</color>
     <color name="D2D5DC">#D2D5DC</color>
     <color name="dialog_bg">#454545</color>
     <color name="auditing_in">#74CC5A</color>
-    <color name="gray15">#4E4E4E</color>
+
     <color name="login_line">#CCCCCC</color>
 
 
     <color name="grayEeeeee">#eeeeee</color>
     <color name="red">#FF0000</color>
     <color name="red2">#F63D31</color>
+    <color name="red3">#FF4650</color>
+
     <color name="yellow">#ffb400</color>
     <!-- 扫描 -->
     <color name="biankuangColor">#F2F2F2</color>
