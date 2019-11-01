@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.htdata.goyo.network.manage.NetworkManage;
+import com.htdata.goyo.network.manage.OnResponseResult;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -18,8 +21,9 @@ import androidx.fragment.app.Fragment;
  * @日期：2019-10-17 13:47
  * @描述：
  */
-public class BaseFragment extends Fragment {
+public class BaseFragment extends Fragment implements OnResponseResult {
 
+    protected NetworkManage netClient;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        initRegisterEventBus();
+        netClient = NetworkManage.getInstance();
         return  super.onCreateView(inflater,container,savedInstanceState);
     }
 
@@ -124,5 +129,15 @@ public class BaseFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         initUnregisterEventBus();
+    }
+
+    @Override
+    public void onResponseSuccess(String result, int tag) {
+
+    }
+
+    @Override
+    public void onResponseError(String result, int tag) {
+
     }
 }
