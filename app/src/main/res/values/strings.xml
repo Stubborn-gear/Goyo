@@ -51,6 +51,24 @@
     <string name="run_number">运行台数</string>
     <string name="standby_number">待机台数</string>
     <string name="fault_number">故障台数</string>
+    <string name="data_monitor">数据监测</string>
+    <string name="real_time_data">实时数据</string>
+    <string name="history_data">历史数据</string>
+    <string name="fault_data">故障数据</string>
+    <string name="statistics_analyse">统计分析</string>
+    <string name="police_type">报警类型</string>
+    <string name="one_level_alarm">一级报警</string>
+    <string name="two_level_alarm">二级报警</string>
+    <string name="three_level_alarm">三级报警</string>
+    <string name="four_level_alarm">四级报警</string>
+
+
+    <!-- 我的 -->
+    <string name="set_pwd">密码修改</string>
+    <string name="qy_auth">企业认证</string>
+
+
+
 
 
 

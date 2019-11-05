@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/qb_px_86"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/qb_px_21"
+        android:paddingLeft="@dimen/qb_px_16"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_90">
+
+        <ImageView
+            android:background="@color/blue_down"
+            android:id="@+id/m_user_head"
+            android:layout_centerVertical="true"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/m_user_name"
+                android:layout_marginLeft="@dimen/qb_px_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:text="用户名"/>
+
+            <TextView
+                android:id="@+id/m_user_desc"
+                android:layout_marginTop="@dimen/qb_px_2"
+                android:layout_marginLeft="@dimen/qb_px_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray11"
+                android:textSize="14sp"
+                android:text="用户描述"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:paddingRight="@dimen/qb_px_21"
+        android:paddingLeft="@dimen/qb_px_16"
+        android:id="@+id/m_user_set_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_52"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/my_user_image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_30"
+                android:layout_height="@dimen/qb_px_30"
+                android:layout_centerVertical="true"
+                android:background="@color/gray3"
+                 />
+        </LinearLayout>
+
+        <TextView
+            style="@style/my_user_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/my_user_image1"
+            android:text="@string/set_pwd" />
+
+        <ImageView
+            android:id="@+id/iv_myUser_authenticationIntoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_gray_right_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:maxLength="6"
+            android:textColor="@color/gray6"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line"/>
+
+        <RelativeLayout
+            android:id="@+id/m_user_qy_auth"
+            android:paddingRight="@dimen/qb_px_21"
+            android:paddingLeft="@dimen/qb_px_16"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/my_user_image2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_30"
+                    android:layout_height="@dimen/qb_px_30"
+                    android:layout_centerVertical="true"
+                    android:background="@color/gray3"
+                    />
+            </LinearLayout>
+
+            <TextView
+                style="@style/my_user_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/my_user_image2"
+                android:layout_centerVertical="true"
+                android:text="@string/qy_auth" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_gray_right_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:maxLength="6"
+                android:textColor="@color/gray6"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

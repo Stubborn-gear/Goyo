@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/fl_device_name"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:background="@drawable/model_frame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_27"
+        android:paddingLeft="@dimen/qb_px_4"
+        android:paddingRight="@dimen/qb_px_4"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="点击"
+        android:textColor="@color/title_back_text"/>
+
+</LinearLayout>

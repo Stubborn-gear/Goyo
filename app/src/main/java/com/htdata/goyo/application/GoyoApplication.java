@@ -3,6 +3,7 @@ package com.htdata.goyo.application;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.os.Handler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +24,14 @@ public class GoyoApplication extends Application {
      */
     public static List<Activity> actList = new ArrayList<Activity>();
 
-
+    public static int mMainThreadId;
+    public static Handler mHandler;
 
     @Override
     public void onCreate() {
         super.onCreate();
         init();
-
+        mHandler = new Handler();
     }
 
     private void init(){
@@ -67,5 +69,21 @@ public class GoyoApplication extends Application {
     public static List<Activity> getActList() {
         return actList;
     }
+
+    /**
+     * 返回主线程的pid
+     * @return
+     */
+    public static int getMainThreadId() {
+        return mMainThreadId;
+    }
+    /**
+     * 返回Handler
+     * @return
+     */
+    public static Handler getHandler() {
+        return mHandler;
+    }
+
 
 }

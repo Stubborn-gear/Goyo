@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingRight="@dimen/qb_px_16"
+    android:paddingLeft="@dimen/qb_px_16"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_71">
+
+    <LinearLayout
+        android:layout_toLeftOf="@+id/dmd_state"
+        android:layout_marginRight="@dimen/qb_px_10"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dmd_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/dmd_desc"
+            android:layout_marginTop="@dimen/qb_px_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/gray11"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dmd_state"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_gray_right_arrow"/>
+
+</RelativeLayout>

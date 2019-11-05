@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <stroke
+        android:width="@dimen/qb_px_1"
+        android:color="@color/title_back_text" /> <!-- 定义描边的宽度和描边的颜色值 -->
+    <solid
+        android:color="@color/white"/><!-- 填充的颜色 -->
+    <corners
+        android:radius="@dimen/qb_px_1"
+        />
+</shape>

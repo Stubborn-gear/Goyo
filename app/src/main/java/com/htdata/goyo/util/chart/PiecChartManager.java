@@ -68,31 +68,26 @@ public class PiecChartManager {
 
     /**
      *
-     * @param run  运行
-     * @param fault 故障
-     * @param standby 待机
-     * @param percnetOff    停机
+     * @param oneLevel  一级
+     * @param twoLevel 二级
+     * @param threeLevel 三级
      */
-    public void setPieChartData(Float run, Float fault, Float standby, Float percnetOff){
+    public void setPieChartData(Float oneLevel, Float twoLevel, Float threeLevel){
 
         List<Integer> colorList = new ArrayList<>();
         //添加数据
         ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
-        if (run != 0 && run != 0.0){
-            entries.add(new PieEntry(run, ""));//运行
+        if (oneLevel != 0 && oneLevel != 0.0){
+            entries.add(new PieEntry(oneLevel, ""));
             colorList.add(Color.parseColor("#4787F7"));
         }
-        if (fault != 0 && fault != 0.0){
-            entries.add(new PieEntry(fault, ""));//故障
-            colorList.add(Color.parseColor("#F63D31"));
+        if (twoLevel != 0 && twoLevel != 0.0){
+            entries.add(new PieEntry(twoLevel, ""));
+            colorList.add(Color.parseColor("#ABD4FB"));
         }
-        if (standby != 0 && standby != 0.0){
-            entries.add(new PieEntry(standby, ""));//待机
-            colorList.add(Color.parseColor("#abd4fb"));
-        }
-        if (percnetOff != 0 && percnetOff != 0.0){
-            entries.add(new PieEntry(percnetOff, ""));//停机
-            colorList.add(Color.parseColor("#DDDDDD"));
+        if (threeLevel != 0 && threeLevel != 0.0){
+            entries.add(new PieEntry(threeLevel, ""));
+            colorList.add(Color.parseColor("#D8D8D8"));
         }
 
 //        entries.add(new PieEntry(80, "运行"));//运行
@@ -158,19 +153,17 @@ public class PiecChartManager {
         setLegend();
     }
 
-
-
     //设置中间文字
     private SpannableString generateCenterSpannableText() {
         int blueColor = mContext.getResources().getColor(R.color.blue_bg3);
         int grayColor = mContext.getResources().getColor(R.color.gray6);
-        SpannableString s = new SpannableString("近7天\n运行状态占比 ");
-        s.setSpan(new RelativeSizeSpan(1f), 0, 3, 0);
-        s.setSpan(new StyleSpan(Typeface.NORMAL), 0, 3, 0);
-        s.setSpan(new ForegroundColorSpan(blueColor), 0, 3, 0);
-        s.setSpan(new RelativeSizeSpan(0.8f), 3, s.length(), 0);
-        s.setSpan(new StyleSpan(Typeface.NORMAL), 3, s.length(), 0);
-        s.setSpan(new ForegroundColorSpan(grayColor), 3, s.length(), 0);
+        SpannableString s = new SpannableString("100种\n备件总量");
+        s.setSpan(new RelativeSizeSpan(1f), 0, 4, 0);
+        s.setSpan(new StyleSpan(Typeface.NORMAL), 0, 4, 0);
+        s.setSpan(new ForegroundColorSpan(blueColor), 0, 4, 0);
+        s.setSpan(new RelativeSizeSpan(0.8f), 4, s.length(), 0);
+        s.setSpan(new StyleSpan(Typeface.NORMAL), 4, s.length(), 0);
+        s.setSpan(new ForegroundColorSpan(grayColor), 4, s.length(), 0);
         return s;
     }
 

@@ -16,13 +16,16 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.BarEntry;
 import com.htdata.goyo.R;
 import com.htdata.goyo.base.BaseFragment;
+import com.htdata.goyo.main.ActMain;
 import com.htdata.goyo.main.make.adapter.HomeGridAdapter;
 import com.htdata.goyo.main.make.model.MakeHomeBarModel;
+import com.htdata.goyo.make.home.activity.ActDataMonitor;
 import com.htdata.goyo.network.manage.Command;
 import com.htdata.goyo.network.manage.NetworkManage;
 import com.htdata.goyo.network.manage.OnResponseResult;
 import com.htdata.goyo.network.manage.ReqUrl;
 import com.htdata.goyo.network.utils.NetUtil;
+import com.htdata.goyo.util.LogUtils;
 import com.htdata.goyo.util.chart.BarChartManager;
 import com.htdata.goyo.util.chart.LineChartMuchManager;
 import com.htdata.goyo.util.statusbar.ImmersionBar;
@@ -238,11 +241,26 @@ public class MakeHomeFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.home_my_user:
+                ((ActMain)getActivity()).openDrawerLayout();
                 break;
             case R.id.home_data_check:
+                toActivity(ActDataMonitor.class);
                 break;
             case R.id.home_refresh:
                 break;
         }
+    }
+
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden){
+        }
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
     }
 }

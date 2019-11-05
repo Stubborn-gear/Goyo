@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="left">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="侧滑菜单" />
-    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -113,5 +103,18 @@
             android:background="@drawable/line_shadow" />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="@dimen/qb_px_320"
+        android:layout_height="match_parent"
+        android:layout_gravity="left">
+
+        <FrameLayout
+            android:id="@+id/main_user_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/main_view" />
+    </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
