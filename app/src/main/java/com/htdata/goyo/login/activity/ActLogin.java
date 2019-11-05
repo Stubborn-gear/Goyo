@@ -88,7 +88,6 @@ public class ActLogin extends BaseActivity {
                 ToastUtils.showToastShort(this,"获取验证码");
                 break;
             case R.id.login_btn:
-                System.out.println("====== toActivity(ActMain.class,true);======");
                 toActivity(ActMain.class,true);
                 break;
             case R.id.login_register:

@@ -1,6 +1,8 @@
 package com.htdata.goyo.main;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
@@ -10,14 +12,19 @@ import com.htdata.goyo.R;
 import com.htdata.goyo.main.make.MakeDeviceFragment;
 import com.htdata.goyo.main.make.MakeHomeFragment;
 import com.htdata.goyo.main.make.MakeSparesFragment;
+import com.htdata.goyo.main.make.MakeUserFragment;
 import com.htdata.goyo.main.use.UseDeviceFragment;
 import com.htdata.goyo.main.use.UseHomeFragment;
 import com.htdata.goyo.main.use.UseMaintenanceFragment;
 import com.htdata.goyo.main.use.UseSparesFragment;
+import com.htdata.goyo.util.LogUtils;
+import com.htdata.goyo.util.UiUtil;
 import com.htdata.goyo.util.UserUtil;
 import com.htdata.goyo.util.statusbar.ImmersionBar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import butterknife.BindView;
@@ -49,10 +56,12 @@ public class ActMain extends AppCompatActivity {
     RadioGroup mainBottomLayout;
     @BindView(R.id.main_view)
     View mainView;
+    @BindView(R.id.main_drawer_layout)
+    DrawerLayout drawerLayout;
 
 
-    private Fragment useHomeFragment1, useDeviceFragment1, useSparesFragment1, useMaintenanceFragment1,makeHomeFragment2,makeDeviceFragment2,makeSparesFragment2, mCurrentFragment;
-
+    private Fragment useHomeFragment1, useDeviceFragment1, useSparesFragment1, useMaintenanceFragment1,
+            makeHomeFragment2, makeDeviceFragment2, makeSparesFragment2, mUserFragment, uUserFragment, mCurrentFragment, mUserCurrentFragment;
 
     // ruai chou fei te
     @Override
@@ -62,6 +71,7 @@ public class ActMain extends AppCompatActivity {
         ButterKnife.bind(this);
         initFragment();
         ImmersionBar.with(this).init();
+        initDrawerListener();
     }
 
 
@@ -71,8 +81,6 @@ public class ActMain extends AppCompatActivity {
     public void initFragment() {
         showUserType();
     }
-
-
 
     @OnClick({R.id.main_tab1, R.id.main_tab2, R.id.main_tab3, R.id.main_tab4, R.id.main_tab5, R.id.main_tab6, R.id.main_tab7})
     public void onViewClicked(View view) {
@@ -258,9 +266,10 @@ public class ActMain extends AppCompatActivity {
     /**
      * 根据用户类型显示界面
      */
-    private void showUserType(){
-        switch (UserUtil.getUserType()){
+    private void showUserType() {
+        switch (UserUtil.getUserType()) {
             case 1://使用方
+                switchMyUserType(1);
                 switchFragment(1);
                 mainTab1.setVisibility(View.VISIBLE);
                 mainTab2.setVisibility(View.VISIBLE);
@@ -271,6 +280,7 @@ public class ActMain extends AppCompatActivity {
                 mainTab7.setVisibility(View.GONE);
                 break;
             case 2://制造方
+                switchMyUserType(2);
                 switchFragment(5);
                 mainTab1.setVisibility(View.GONE);
                 mainTab2.setVisibility(View.GONE);
@@ -283,4 +293,102 @@ public class ActMain extends AppCompatActivity {
         }
     }
 
+    //====================个人中心=========================
+
+    /**
+     * @param userType 1使用方  2制造方
+     */
+    private void switchMyUserType(int userType) {
+        switch (userType) {
+            case 1:
+                switchUserFragment(1);
+                break;
+            case 2:
+                switchUserFragment(2);
+                break;
+        }
+    }
+
+    /**
+     * 替换我的 Fragment
+     *
+     * @param to Fragment
+     */
+    protected void switchUserContent(Fragment to) {
+        if (mUserCurrentFragment == null) {
+            mUserCurrentFragment = to;
+            // 转换Fragment
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.add(R.id.main_user_content, mUserCurrentFragment);
+            transaction.commitAllowingStateLoss();
+        } else {
+            if (mUserCurrentFragment != to) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                if (!to.isAdded()) { // 先判断是否被add过
+                    transaction.hide(mUserCurrentFragment).add(R.id.main_user_content, to)
+                            .commitAllowingStateLoss(); // 隐藏当前的fragment，add下一个到Activity中
+                } else {
+                    transaction.hide(mUserCurrentFragment).show(to).commitAllowingStateLoss(); // 隐藏当前的fragment，显示下一个
+                }
+                mUserCurrentFragment = to;
+            }
+        }
+    }
+
+    /**
+     * 选择要显示的 Fragment
+     */
+    private void switchUserFragment(int fType) {
+        switch (fType) {
+            case 1:
+                if (uUserFragment == null) {
+                    uUserFragment = new MakeUserFragment();
+                }
+                switchUserContent(uUserFragment);
+                break;
+            case 2:
+                if (mUserFragment == null) {
+                    mUserFragment = new MakeUserFragment();
+                }
+                switchUserContent(mUserFragment);
+                break;
+        }
+    }
+
+    public void openDrawerLayout(){
+        drawerLayout.openDrawer(Gravity.LEFT);
+    }
+
+    private void initDrawerListener(){
+//        drawerLayout.setScrimColor(Color.TRANSPARENT);//去除侧滑时的阴影
+        drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override //滑动中
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+                if (slideOffset > 0.5){
+                    ImmersionBar.with(ActMain.this,mUserFragment).statusBarDarkFont(true).init();
+                }else {
+                    ImmersionBar.with(ActMain.this,makeHomeFragment2).statusBarDarkFont(false).init();
+                }
+
+                // 得到contentView 实现侧滑界面出现后主界面向右平移避免侧滑界面遮住主界面
+                View content = drawerLayout.getChildAt(0);
+                int offset = (int) (drawerView.getWidth() * slideOffset);
+                content.setTranslationX(offset);
+//                LogUtils.v("===滑动中========="+slideOffset);
+            }
+
+            @Override// 打开
+            public void onDrawerOpened(@NonNull View drawerView) {
+            }
+
+            @Override // 关闭
+            public void onDrawerClosed(@NonNull View drawerView) {
+            }
+
+            @Override // 状态改变
+            public void onDrawerStateChanged(int newState) {
+                LogUtils.v("===状态改变========="+newState);
+            }
+        });
+    }
 }

@@ -34,8 +34,46 @@
         <item name="android:textCursorDrawable">@drawable/edit_cursor_color</item>
     </style>
 
+    <!-- 我的字体 样式-->
+    <style name="my_user_text_style">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginLeft">@dimen/qb_px_14</item>
+        <!--<item name="android:textStyle">bold</item>-->
+    </style>
 
-
+    <!-- 指示器属性 -->
+    <declare-styleable name="DynamicPagerIndicator">
+        <attr name="pagerIndicatorMode">
+            <enum name="scrollable" value="1" />
+            <enum name="fixed" value="2" />
+            <enum name="scrollable_center" value="3" />
+        </attr>
+        <attr name="pagerIndicatorScrollToCenterMode">
+            <enum name="linkage" value="1" />
+            <enum name="transaction" value="2" />
+        </attr>
+        <attr name="tabPadding" format="dimension" />
+        <attr name="tabNormalTextSize" format="dimension" />
+        <attr name="tabSelectedTextSize" format="dimension" />
+        <attr name="tabSelectedTextColor" format="color" />
+        <attr name="tabNormalTextColor" format="color" />
+        <attr name="tabTextColorMode">
+            <enum name="common" value="1" />
+            <enum name="gradient" value="2" />
+        </attr>
+        <attr name="indicatorLineHeight" format="dimension" />
+        <attr name="indicatorLineWidth" format="dimension" />
+        <attr name="indicatorLineRadius" format="dimension" />
+        <attr name="indicatorLineStartColor" format="color" />
+        <attr name="indicatorLineEndColor" format="color" />
+        <attr name="indicatorLineMarginTop" format="dimension" />
+        <attr name="indicatorLineMarginBottom" format="dimension" />
+        <attr name="indicatorLineScrollMode">
+            <enum name="dynamic" value="1" />
+            <enum name="transform" value="2" />
+        </attr>
+    </declare-styleable>
 
 
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/qb_px_15"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/t_m_region"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="第三方第三方"
+        android:textSize="14sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/t_m_model"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="第三方第三方"
+        android:textSize="14sp"
+        android:textColor="@color/gray10"/>
+
+    <com.htdata.goyo.view.flow.FlowTagLayout
+        android:id="@+id/t_m_device"
+        android:layout_marginRight="@dimen/qb_px_12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
