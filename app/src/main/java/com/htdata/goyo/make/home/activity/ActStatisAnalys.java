@@ -12,6 +12,7 @@ import com.htdata.goyo.R;
 import com.htdata.goyo.base.BaseActivity;
 import com.htdata.goyo.make.home.fragment.FaultDataFragment;
 import com.htdata.goyo.make.home.fragment.HistoryDataFragment;
+import com.htdata.goyo.make.home.fragment.OneLevelFragment;
 import com.htdata.goyo.make.home.fragment.RealTimeDataFragment;
 import com.htdata.goyo.make.home.fragment.StatisAnalysFragment;
 import com.htdata.goyo.make.home.model.MonitorModel;
@@ -57,6 +58,7 @@ public class ActStatisAnalys extends BaseActivity {
 
     private List<String> mTitle = new ArrayList<String>();
     private List<Fragment> mFragment = new ArrayList<Fragment>();
+    private OneLevelFragment oneLevelFragment1,oneLevelFragment2,oneLevelFragment3,oneLevelFragment4;
 
     @Override
     protected int getContentViewId() {
@@ -96,17 +98,18 @@ public class ActStatisAnalys extends BaseActivity {
         mTitle.add(setString(R.string.three_level_alarm));
         mTitle.add(setString(R.string.four_level_alarm));
 
-        RealTimeDataFragment realTimeDataFragment = new RealTimeDataFragment();
-        HistoryDataFragment historyDataFragment = new HistoryDataFragment();
-        FaultDataFragment faultDataFragment = new FaultDataFragment();
-        StatisAnalysFragment statisAnalysFragment = new StatisAnalysFragment();
+        oneLevelFragment1 = new OneLevelFragment();
+        oneLevelFragment2 = new OneLevelFragment();
+        oneLevelFragment3 = new OneLevelFragment();
+        oneLevelFragment4 = new OneLevelFragment();
 
-        mFragment.add(realTimeDataFragment);
-        mFragment.add(historyDataFragment);
-        mFragment.add(faultDataFragment);
-        mFragment.add(statisAnalysFragment);
+        mFragment.add(oneLevelFragment1);
+        mFragment.add(oneLevelFragment2);
+        mFragment.add(oneLevelFragment3);
+        mFragment.add(oneLevelFragment4);
         setViewPagerContent(mViewPager, null);
         initMagicIndicator();
+        setPageChangeListener();
     }
 
     private void setViewPagerContent(final ViewPager viewPager, final DynamicPagerIndicator dynamicPagerIndicator) {
@@ -157,44 +160,34 @@ public class ActStatisAnalys extends BaseActivity {
         ViewPagerHelper.bind(mIndicator, mViewPager);
     }
 
-    private void initRecyclerView() {
+    private void setPageChangeListener(){
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
 
+            @Override
+            public void onPageSelected(int position) {
+                switch (position)   {
+                    case 0:
+                        oneLevelFragment1.setAnalysState(1);
+                        break;
+                    case 1:
+                        oneLevelFragment2.setAnalysState(2);
+                        break;
+                    case 2:
+                        oneLevelFragment3.setAnalysState(3);
+                        break;
+                    case 3:
+                        oneLevelFragment4.setAnalysState(4);
+                        break;
+                }
+            }
 
-
-    }
-
-
-    private List<String> getDataList1() {
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            list.add("部门" + i);
-        }
-        return list;
-    }
-
-    private List<MonitorModel> getDataList2() {
-        MonitorModel mm = new MonitorModel();
-        List<MonitorModel> list = new ArrayList<>();
-        List<String> list2 = new ArrayList<>();
-
-        for (int i = 0; i < 8; i++) {
-            list2.add("设备" + i);
-        }
-        mm.setRegion("经轧区域一");
-        mm.setModel("吐丝机器模型");
-        mm.setList(list2);
-        list.add(mm);
-
-        MonitorModel mm2 = new MonitorModel();
-        List<String> list3 = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
-            list3.add("设备" + i);
-        }
-        mm2.setRegion("经轧区域er");
-        mm2.setModel("吐丝机器模型er");
-        mm2.setList(list3);
-        list.add(mm2);
-        return list;
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
     }
 
 }

@@ -22,7 +22,6 @@
         <item name="android:background">@null</item>
     </style>
 
-
     <!-- 沉浸式 白色 -->
     <style name="immersion_bar">
         <item name="android:background">@color/white</item>
@@ -32,6 +31,15 @@
     <!-- edittext 光标颜色-->
     <style name="Edit_Cursor_Color">
         <item name="android:textCursorDrawable">@drawable/edit_cursor_color</item>
+    </style>
+
+
+    <!-- textview 单行超出... -->
+    <style name="text_single">
+        <item name="android:maxLines">1</item>
+        <item name="android:lines">1</item>
+        <!--<item name="android:maxLength">1</item>-->
+        <item name="android:ellipsize">end</item>
     </style>
 
     <!-- 我的字体 样式-->
