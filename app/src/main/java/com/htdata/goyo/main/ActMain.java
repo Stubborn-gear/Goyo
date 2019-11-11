@@ -59,11 +59,11 @@ public class ActMain extends AppCompatActivity {
     @BindView(R.id.main_drawer_layout)
     DrawerLayout drawerLayout;
 
-
     private Fragment useHomeFragment1, useDeviceFragment1, useSparesFragment1, useMaintenanceFragment1,
             makeHomeFragment2, makeDeviceFragment2, makeSparesFragment2, mUserFragment, uUserFragment, mCurrentFragment, mUserCurrentFragment;
 
-    // ruai chou fei te
+    public int isDarkFont = 1 ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +73,6 @@ public class ActMain extends AppCompatActivity {
         ImmersionBar.with(this).init();
         initDrawerListener();
     }
-
 
     /**
      * 初始化 要显示的fragment
@@ -359,36 +358,60 @@ public class ActMain extends AppCompatActivity {
         drawerLayout.openDrawer(Gravity.LEFT);
     }
 
+    /**
+     * DrawerListener 监听
+     */
     private void initDrawerListener(){
 //        drawerLayout.setScrimColor(Color.TRANSPARENT);//去除侧滑时的阴影
         drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override //滑动中
             public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
                 if (slideOffset > 0.5){
-                    ImmersionBar.with(ActMain.this,mUserFragment).statusBarDarkFont(true).init();
+                    if (isDarkFont == 1){
+                        isDarkColor(true);
+                    }else {
+                        isDarkColor(true);
+                    }
                 }else {
-                    ImmersionBar.with(ActMain.this,makeHomeFragment2).statusBarDarkFont(false).init();
+                    if (isDarkFont != 1){
+                        isDarkColor(true);
+                    }else {
+                        isDarkColor(false);
+                    }
                 }
 
                 // 得到contentView 实现侧滑界面出现后主界面向右平移避免侧滑界面遮住主界面
                 View content = drawerLayout.getChildAt(0);
                 int offset = (int) (drawerView.getWidth() * slideOffset);
                 content.setTranslationX(offset);
-//                LogUtils.v("===滑动中========="+slideOffset);
             }
 
             @Override// 打开
-            public void onDrawerOpened(@NonNull View drawerView) {
-            }
+            public void onDrawerOpened(@NonNull View drawerView) { }
 
             @Override // 关闭
-            public void onDrawerClosed(@NonNull View drawerView) {
-            }
+            public void onDrawerClosed(@NonNull View drawerView) {}
 
             @Override // 状态改变
-            public void onDrawerStateChanged(int newState) {
-                LogUtils.v("===状态改变========="+newState);
-            }
+            public void onDrawerStateChanged(int newState) {}
         });
     }
+
+    private void isDarkColor(boolean isColor){
+        if (isColor){
+            ImmersionBar.with(ActMain.this,mUserFragment).statusBarDarkFont(true).init();
+        }else {
+            if (makeHomeFragment2 != null){
+                ImmersionBar.with(ActMain.this,makeHomeFragment2).statusBarDarkFont(false).init();
+            }
+            if (makeDeviceFragment2 != null){
+                ImmersionBar.with(ActMain.this,makeDeviceFragment2).statusBarDarkFont(false).init();
+            }
+            if (makeSparesFragment2 != null){
+                ImmersionBar.with(ActMain.this,makeSparesFragment2).statusBarDarkFont(false).init();
+            }
+
+        }
+    }
+
 }

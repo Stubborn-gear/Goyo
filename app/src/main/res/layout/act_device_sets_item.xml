@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="@dimen/qb_px_15"
+    android:paddingRight="@dimen/qb_px_16"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_80">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dv_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/gray5"/>
+
+        <TextView
+            android:id="@+id/dv_item_number"
+            style="@style/text_single"
+            android:layout_marginLeft="@dimen/qb_px_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/gray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dv_item_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/title_back_text"/>
+
+        <ImageView
+            android:layout_marginLeft="@dimen/qb_px_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_gray_right_arrow"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dv_item_desc"
+        style="@style/text_single"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:textColor="@color/gray"/>
+
+
+</LinearLayout>

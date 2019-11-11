@@ -1,45 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/home_btn1"
-        android:layout_marginTop="200dp"
+    <View
+        android:id="@+id/eq_zhan_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="请求"
-        />
-    <Button
-        android:id="@+id/home_btn2"
+        android:layout_height="20dp"/>
+
+    <!-- 搜索 -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="取消"
-        />
+        android:layout_height="47dp">
 
-    <Switch
-        android:id="@+id/switch1"
+        <LinearLayout
+            android:id="@+id/dv_layout_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_32"
+            android:layout_marginBottom="@dimen/qb_px_4"
+            android:layout_marginLeft="@dimen/qb_px_9"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_toLeftOf="@+id/dv_screen"
+            android:layout_weight="10"
+            android:background="@drawable/screen_search_input"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/qb_px_12"
+                android:src="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/dv_search_edit"
+                style="@style/Edit_Cursor_Color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/search_device"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/qb_px_5"
+                android:singleLine="true"
+                android:textColor="@color/gray"
+                android:textSize="13sp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dv_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawableTop="@drawable/ic_screen"
+            android:gravity="center"
+            android:paddingBottom="@dimen/qb_px_4"
+            android:paddingLeft="@dimen/qb_px_10"
+            android:paddingRight="@dimen/qb_px_15"
+            android:paddingTop="@dimen/qb_px_10"
+            android:text="@string/screening"
+            android:textColor="@color/gray"
+            android:textSize="11sp" />
+    </RelativeLayout>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/dv_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Switch" />
-
-    <Switch
-        android:id="@+id/switch2"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Switch" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/device_text1"
-        android:gravity="center"
+    <!-- 台套设备管理  -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="制造方 设备"
-        android:textColor="@color/blue_down"
-        android:textSize="@dimen/sp_30"/>
+        android:layout_height="163dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/ic_device_banner" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_25"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/set_device_manage"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e_m_c"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_62"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:background="@drawable/ic_device_radius_bg"
+            android:orientation="horizontal">
+
+            <!-- 台套 -->
+            <LinearLayout
+                android:id="@+id/dv_sets_layout"
+                android:layout_marginRight="@dimen/qb_px_35"
+                android:layout_marginLeft="@dimen/qb_px_35"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_round_hand" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/qb_px_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sets"
+                    android:textColor="@color/gray3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/line" />
+
+            <!-- 单体设备 -->
+            <LinearLayout
+                android:id="@+id/dv_single_device_layout"
+                android:layout_marginRight="@dimen/qb_px_35"
+                android:layout_marginLeft="@dimen/qb_px_35"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_single_device" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/qb_px_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/single_device"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
 
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/dv_indicator"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:background="@drawable/ic_tab_navigation_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_35" />
 
+    <com.htdata.goyo.view.MyViewPager
+        android:id="@+id/dv_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    </LinearLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </LinearLayout>

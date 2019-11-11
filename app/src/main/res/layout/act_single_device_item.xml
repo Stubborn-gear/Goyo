@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_marginRight="@dimen/qb_px_12"
+    android:layout_marginLeft="@dimen/qb_px_12"
+    android:background="@drawable/ic_card_bg"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_73">
+
+
+    <LinearLayout
+        android:id="@+id/sd_item_shop_layout"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="@dimen/qb_px_79"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/sd_item_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray11"
+            android:textSize="10sp"
+            android:text="智能诊断部"/>
+
+        <TextView
+            android:id="@+id/sd_item_shop_number"
+            android:layout_marginTop="@dimen/qb_px_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray11"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/qb_px_25"
+        android:layout_marginRight="@dimen/qb_px_12"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_36">
+            <TextView
+                android:id="@+id/sd_item_device_name"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/sd_item_device_model"
+                android:layout_toRightOf="@+id/sd_item_device_name"
+                android:layout_marginLeft="@dimen/qb_px_10"
+                style="@style/text_single"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray6"
+                android:textSize="10sp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_1"
+            android:background="@color/gray17"/>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/sd_item_vendor_layout"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray11"
+                    android:textSize="12sp"
+                    android:text="@string/manufacturer"/>
+
+                <TextView
+                    android:id="@+id/sd_item_manufacturer"
+                    android:layout_toLeftOf="@+id/ss_item_purchase"
+                    style="@style/text_single"
+                    android:layout_marginLeft="@dimen/qb_px_10"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/main_color_text"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sd_item_point_number_layout"
+                android:gravity="center_vertical|right"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray11"
+                    android:textSize="12sp"
+                    android:text="@string/measuring_point"/>
+
+                <TextView
+                    android:id="@+id/sd_item_measuring_point_count"
+                    android:layout_toLeftOf="@+id/ss_item_purchase"
+                    style="@style/text_single"
+                    android:layout_marginLeft="@dimen/qb_px_10"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/main_color_text"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

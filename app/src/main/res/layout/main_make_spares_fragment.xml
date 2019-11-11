@@ -1,15 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:gravity="center"
+    <View
+        android:id="@+id/spares_zhan_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="制造方 备品备件"
-        android:textColor="@color/blue_down"
-        android:textSize="@dimen/sp_30"/>
+        android:layout_height="20dp"/>
+
+    <!-- 搜索 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <LinearLayout
+            android:id="@+id/spares_layout_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_32"
+            android:layout_marginBottom="@dimen/qb_px_4"
+            android:layout_marginLeft="@dimen/qb_px_12"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_marginRight="@dimen/qb_px_12"
+            android:layout_toLeftOf="@+id/dv_screen"
+            android:layout_weight="10"
+            android:background="@drawable/screen_search_input"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/qb_px_12"
+                android:src="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/spares_search_edit"
+                style="@style/Edit_Cursor_Color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/search_device"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/qb_px_5"
+                android:singleLine="true"
+                android:textColor="@color/gray"
+                android:textSize="13sp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:background="@drawable/recycler_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/spares_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 

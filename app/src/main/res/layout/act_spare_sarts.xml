@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/act_title_bar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sarts_recycler_view"
+        android:layout_marginTop="@dimen/qb_px_14"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/sarts_indicator"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_35" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_1"
+        android:background="@color/line" />
+
+    <com.htdata.goyo.view.MyViewPager
+        android:id="@+id/sarts_view_pager"
+        android:layout_marginTop="@dimen/qb_px_14"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+</LinearLayout>

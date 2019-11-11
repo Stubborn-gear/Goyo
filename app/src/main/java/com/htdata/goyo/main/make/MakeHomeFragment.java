@@ -91,7 +91,7 @@ public class MakeHomeFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = getInflater(getContext(), R.layout.main_make_home_fragment, container, false);
-        ImmersionBar.with(getActivity(), this).statusBarDarkFont(false).init();
+        initImmersionBar();
         unbinder = ButterKnife.bind(this, view);
         initGridView();
         initBarChart();
@@ -251,16 +251,31 @@ public class MakeHomeFragment extends BaseFragment {
         }
     }
 
+    private void initImmersionBar(){
+        ((ActMain)getActivity()).isDarkFont = 1 ;
+        ImmersionBar.with(getActivity(), this).statusBarDarkFont(false).init();
+    }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if (!hidden){
+        if (!hidden) {// 切换 实时刷新
+            initImmersionBar();
         }
     }
 
+//    @Override
+//    public void setUserVisibleHint(boolean isVisibleToUser) {
+//        super.setUserVisibleHint(isVisibleToUser);
+//        if (isVisibleToUser){
+//            initImmersionBar();
+//        }
+//    }
+
     @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+        ImmersionBar.with(getActivity(), this).destroy();
     }
 }

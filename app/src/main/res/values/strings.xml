@@ -62,6 +62,33 @@
     <string name="three_level_alarm">三级报警</string>
     <string name="four_level_alarm">四级报警</string>
 
+    <!-- 设备 -->
+    <string name="search_device">搜索设备</string>
+    <string name="screening">筛选</string>
+    <string name="set_device_manage">台套设备管理</string>
+    <string name="e_m_c">Equipment Management Cockpit</string>
+    <string name="sets">台套</string>
+    <string name="single_device">单体设备</string>
+    <string name="ai_opex">智能运维部</string>
+    <string name="ai_diagnosis">智能诊断部</string>
+
+
+    <!-- 备品备件 -->
+    <string name="spare_parts">备品</string>
+    <string name="spare">备件</string>
+    <string name="all">全部</string>
+    <string name="purchase">购买</string><!-- 多用  -->
+    <string name="lease">租赁</string>
+    <string name="consignment">寄售</string>
+    <string name="stock_number">库存数</string>
+    <string name="minimum_stock">最低库存量</string>
+    <string name="use_life">使用寿命</string>
+    <string name="fragile">易碎件</string>
+    <string name="accident">事故件</string>
+    <string name="ordinary">普通件</string>
+    <string name="manufacturer">生产厂商</string>
+    <string name="measuring_point">测点数量</string>
+
 
     <!-- 我的 -->
     <string name="set_pwd">密码修改</string>
